@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8" />
+
+<div class="row">
+	<div class="col-3"></div>
+	<div class="col-6">
+		<br>
+		<h1>Booking Receipt Generator</h1><br>
+		<form action="genera.php" method="post">
+			<div class="form-group row">
+				<label for="appartamento" class="col-2 col-form-label">Appartamento</label>
+				<div class="col-10">
+					<select id="appartamento" name="appartamento" type="text" required="required" class="form-control">
+						<option value="Ispirazione Vacanza">Appartamento Al Forte</option>
+						<option value="Casa Donegani">Casa Donegani</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="nomeospite" class="col-2 col-form-label">Nome ospite</label>
+				<div class="col-10">
+					<input id="nomeospite" name="nomeospite" type="text" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="numeroprenotazione" class="col-2 col-form-label">Numero prenotazione</label>
+				<div class="col-10">
+					<input id="numeroprenotazione" name="numeroprenotazione" type="text" required="required"
+						class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="data" class="col-2 col-form-label">Data check-in</label>
+				<div class="col-10">
+					<input id="data" name="data" type="date" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="adulti" class="col-2 col-form-label">Numero adulti</label>
+				<div class="col-10">
+					<select id="adulti" name="adulti" aria-describedby="adultiHelpBlock" required="required"
+						class="custom-select">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+					</select>
+					<span id="adultiHelpBlock" class="form-text text-muted">Numero ospiti con più di 14 anni</span>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="bambini" class="col-2 col-form-label">Numero bambini</label>
+				<div class="col-10">
+					<select id="bambini" name="bambini" aria-describedby="bambiniHelpBlock" required="required"
+						class="custom-select">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+					</select>
+					<span id="bambiniHelpBlock" class="form-text text-muted">Numero ospiti con meno di 14 anni</span>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-2 col-form-label" for="notti">Numero notti del soggiorno</label>
+				<div class="col-10">
+					<input id="notti" name="notti" type="text" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="costosoggiorno" class="col-2 col-form-label">Costo soggiorno</label>
+				<div class="col-10">
+					<input id="costosoggiorno" name="costosoggiorno" type="text" required="required"
+						class="form-control">
+					<span id="costos" class="form-text text-muted">Usare il punto "." per indicare i decimali. es.
+						346.00, 854.50... </span>
+				</div>
+			</div>
+			<div class="form-group row" id="deposit_btn" style="padding-left:50%;">
+				<button type="button" onclick="showDeposit()" class="btn btn-warning">Mostra deposito</button>
+			</div>
+			<div id="deposit_form"></div>
+			<div class="form-group row">
+				<label class="col-2">Pulizie incluse?</label>
+				<div class="col-10">
+					<div class="custom-control custom-checkbox custom-control-inline">
+						<input name="pulizie" id="pulizie_0" type="checkbox" class="custom-control-input" value="Si"
+							aria-describedby="pulizieHelpBlock">
+						<label for="pulizie_0" class="custom-control-label">Si</label>
+					</div>
+					<span id="pulizieHelpBlock" class="form-text text-muted">Selezionare "Si" se il costo delle pulizie
+						è incluso nel costo del soggiorno</span>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="offset-2 col-10">
+					<button name="submit" type="submit" class="btn btn-primary">Genera Ricevuta</button>
+					<button name="reset" type="reset" class="btn btn-primary">Pulisci</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-3"></div>
+</div>
+
+<script>
+	function showDeposit() {
+		value = `<div class="form-group row"><label for="costosoggiorno" class="col-2 col-form-label">Deposito anticipato</label><div class="col-10"><input id="deposito" name="deposito" type="text" required="required" class="form-control"><span id="depositos" class="form-text text-muted">Usare il punto "." per indicare i decimali. es. 346.00, 854.50... </span></div> </div>`;
+		document.getElementById("deposit_form").innerHTML = value;
+		document.getElementById("deposit_btn").style.display = "none";
+	}
+</script>
