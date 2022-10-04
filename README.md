@@ -1,1 +1,1 @@
-# Online-receipt-generator
+#Online-Booking-Receipt-Generator
