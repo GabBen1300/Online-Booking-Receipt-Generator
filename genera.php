@@ -15,16 +15,16 @@ $tassa = floatval($adulti * $notti * 2);
 $amount = floatval($tassa + 40.00);
 $amountlessdeposit = $costosoggiorno-$deposito;
 
-$indirizzo = 'Via al Castèl Pénede n. 59, 38069 Nago-Torbole (TN) - Italy, +39 331 1234215';
-$contatti = 'info@ispirazionevacanza.com - www.ispirazionevacanza.com';
+$indirizzo = '****************************';
+$contatti = '****************************';
 $image = 'image002.png';
-$nomeapp = 'Appartamento Al Forte';
+$nomeapp = '****************************';
 
-if ($appartamento == 'Casa Donegani') {
-	$indirizzo = 'Via della Provvidenza n. 13, 38062 Arco (TN) - Italy, +39 331 1234215';
-	$contatti = 'doneganiapartments@gmail.com - www.casadonegani.com';
+if ($appartamento == '****************************') {
+	$indirizzo = '****************************';
+	$contatti = '****************************';
 	$image = 'image001.png';
-	$nomeapp = 'Casa Donegani';
+	$nomeapp = '****************************';
 	}
 
 if ($pulizie == 'Si') {	
